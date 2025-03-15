@@ -14,8 +14,16 @@ public class App {
             System.out.println("Dealt: " + card);
             System.out.println("Suit: " + card.getSuit());
             System.out.println("Rank: " + card.getRank());
-            System.out.println(card.getRankImage()+ card.getSuitImage());
+            System.out.println(card.getRankImage() + card.getSuitImage());
         }
+
+//        todo: some more logic
+//        create game dialog to select renderer, color or symbol
+//                create game logic which checks if the card is the same as the one in the deck
+        // game only for red/black chooses
+        // create game counter for the number of correct guesses
+        // create logic whitch contoled your guesses and who will be the winner (if your fail guesses are
+        // more than the correct guesses, you lose)
 
         System.out.println("Remaining cards: " + deck.remainingCards());
     }
