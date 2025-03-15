@@ -76,12 +76,16 @@ GuessTheCard/
 - Добавить возможность угадывать число или картинку.
 - Реализовать систему подсчета очков.
 
-## Сроки
-Проект должен быть готов до следующего воскресенья. Если будут готовы хотя бы две реализации, мы обсудим их в Discord Сергея: [https://discord.gg/GYupeYzp](https://discord.gg/GYupeYzp).
+5. Build and Run
 
-## Ресурсы
-- Картинки для карт можно найти в Discord-чате, где проходила встреча.
-- Класс игровой карты и рендереры обсуждались в Telegram-чате: [https://t.me/zhukovsd_it_chat/53243/192975](https://t.me/zhukovsd_it_chat/53243/192975).
+From the project root (card-game/):
+bash
+Copy
+
+# Build the project
+mvn clean package
+# Run the JAR
+java -jar target/card-game-1.0-SNAPSHOT.jar
 
 ---
 
