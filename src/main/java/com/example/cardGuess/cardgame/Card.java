@@ -11,11 +11,16 @@ public class Card {
 
     public Suit getSuit() { return suit; }
     public Rank getRank() { return rank; }
+
     public String getSuitImage() { return suit.getSuitImage(); }
     public String getRankImage() { return rank.getRankImage(); }
 
     @Override
     public String toString() {
         return rank + " of " + suit;
+    }
+
+    public boolean isRed() {
+        return suit == Suit.HEARTS || suit == Suit.DIAMONDS;
     }
 }

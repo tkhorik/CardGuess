@@ -5,7 +5,8 @@ import com.example.cardGuess.cardgame.Card;
 public class TextRenderer implements CardRenderer {
     @Override
     public void render(Card card) {
-        // render card as text
-        System.out.println("Rendering card as text: " + card);
+        String suit = card.getSuitImage();
+        String rank = card.getRankImage();
+//        System.out.println("Rendering card as text: " + rank + " of " + suit);
     }
 }
