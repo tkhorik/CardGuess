@@ -3,6 +3,7 @@ package com.example.cardGuess;
 import com.example.cardGuess.cardgame.Card;
 import com.example.cardGuess.cardgame.Deck;
 import com.example.cardGuess.dialogs.Dialog;
+import com.example.cardGuess.dialogs.IntegerDialog;
 import com.example.cardGuess.dialogs.StringSelectDialog;
 import com.example.cardGuess.renderer.CardRenderer;
 import com.example.cardGuess.renderer.TextRenderer;
@@ -31,17 +32,23 @@ public class Game {
         String error = "Ошибка ввода! Необходимо ввести одно из значений: " + Arrays.toString(keys);
         Dialog<String> dialog = new StringSelectDialog(title, error, keys);
 
+//        Dialog<Integer> bet = new IntegerDialog(titleBet,error, betmin,betmax);
+        BetController betController = new BetController();
+
         deck.shuffle();
         CardRenderer textRenderer = new TextRenderer();
         textRenderer.render(deck.dealCard());
+        betController.startBetting();
         while (deck.remainingCards() > 0) {
             Card card = deck.dealCard();
+            String betquastion = dialog.input();
             String userInput = dialog.input();
 
             if (isCorrect(card, userInput)) {
                 System.out.println("Correct guess!");
                 System.out.println(card.getRankImage() + " " + card.getSuitImage());
                 System.out.println("Remaining cards: " + deck.remainingCards());
+
                 // give bonus
             } else {
                 System.out.println("Incorrect guess!");
