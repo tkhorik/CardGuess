@@ -30,8 +30,14 @@
 - Уменьшить значение: sub(int value)
 - Методы isMin() isMax()
 - 
-- kkk
-
+## Game process with bet and counter:
+- Show user balance (1000 by default) `userBalanceCounter`
+- Ask about a bet and store it in `betValue`
+- Ask about the card
+- Show the correct answer and who is the winner
+  - If the user guess is right, add the bet value to the user balance
+  - If not, subtract the bet value from the user balance
+- The process repeats if cards are available and the user balance is positive or until the user loses all balance
 
 
 

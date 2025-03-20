@@ -30,29 +30,34 @@ public class Game {
         String error = "Ошибка ввода! Необходимо ввести одно из значений: " + Arrays.toString(keys);
         Dialog<String> dialog = new StringSelectDialog(title, error, keys);
 
-//        Dialog<Integer> bet = new IntegerDialog(titleBet,error, betmin,betmax);
         BetController betController = new BetController();
-
+        int betmin = betController.scoreCounter.getMinScore();
+        int betmax = betController.scoreCounter.getMaxScore();
+        //fixme: here i should make some dialogs separately now it works incorrectly
+        Dialog<Integer> betDialog = new IntegerDialog("ВВедите вашу ставку (целое число)", error, betmin, betmax);
         deck.shuffle();
+
         CardRenderer textRenderer = new TextRenderer();
         textRenderer.render(deck.dealCard());
-        betController.startBetting();
         while (deck.remainingCards() > 0) {
+
+//            betController.startBetting();
             Card card = deck.dealCard();
-            String betquastion = dialog.input();
+            int askBetAmount = betDialog.input();
             String userInput = dialog.input();
 
             if (isCorrect(card, userInput)) {
                 System.out.println("Correct guess!");
                 System.out.println(card.getRankImage() + " " + card.getSuitImage());
+                betController.scoreCounter.add(askBetAmount);
+                System.out.println("Your bet is win! You balance is " + betController.scoreCounter.getScore());
                 System.out.println("Remaining cards: " + deck.remainingCards());
-
-                // give bonus
             } else {
                 System.out.println("Incorrect guess!");
                 System.out.println(card.getRankImage() + " " + card.getSuitImage());
+                betController.scoreCounter.sub(askBetAmount);
+                System.out.println("Your bet is win! You balance is " + betController.scoreCounter.getScore());
                 System.out.println("Remaining cards: " + deck.remainingCards());
-                // give penalty
             }
             textRenderer.render(card);
         }

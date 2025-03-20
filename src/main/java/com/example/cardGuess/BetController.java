@@ -6,8 +6,8 @@ import com.example.cardGuess.score_counter.ScoreCounter;
 
 
 public class BetController {
-    String error = "Errorrrrrrrrrrrrrrrrrrrrrrrrrrrrr";
-    ScoreCounter scoreCounter = new ScoreCounter(10, 30, 22);
+    String error = "Error не верно введена величина ставки, введите целое число в пределах диапазона";
+    ScoreCounter scoreCounter = new ScoreCounter(10, 30000, 1000);
     Dialog<Integer> pinaltyDialog = new IntegerDialog("Введите пенальти: ", error, 0, Integer.MAX_VALUE);
     Dialog<Integer> bonuseDialog = new IntegerDialog("Введите бонус: ", error, 0, Integer.MAX_VALUE);
 
