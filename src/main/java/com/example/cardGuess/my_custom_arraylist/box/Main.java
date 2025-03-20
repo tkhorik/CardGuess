@@ -1,5 +1,7 @@
 package com.example.cardGuess.my_custom_arraylist.box;
 
+import java.io.Serializable;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -15,7 +17,7 @@ public class Main {
         printArray(strings); // Выведет: А Б В
         printArray(numbers); // Выведет: 1 2 3
 
-        Pair<Integer, String> pair = new Pair<>(1, "a");
+        Pair<? extends Serializable, Object> pair = new Pair<>(1, "a");
         System.out.println(pair.getFirst());
         System.out.println(pair.getSecond());
 

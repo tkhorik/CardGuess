@@ -1,27 +1,35 @@
 package com.example.cardGuess.my_custom_arraylist.box;
 
-public class Pair<T, U> {
-    private T first;
-    private U second;
+public class Pair<T, T1> {
+    T valueOne;
+    T valueTwo;
 
-    public Pair(T first, U second) {
-        this.first = first;
-        this.second = second;
+    public Pair(T valueOne, T valueTwo) {
+        this.valueOne = valueOne;
+        this.valueTwo = valueTwo;
     }
 
-    public T getFirst() {
-        return first;
+    public T getValueOne() {
+        return valueOne;
     }
 
-    public void setFirst(T first) {
-        this.first = first;
+    public void setValueOne(T valueOne) {
+        this.valueOne = valueOne;
     }
 
-    public U getSecond() {
-        return second;
+    public T getValueTwo() {
+        return valueTwo;
     }
 
-    public void setSecond(U second) {
-        this.second = second;
+    public void setValueTwo(T valueTwo) {
+        this.valueTwo = valueTwo;
+    }
+
+    public boolean getFirst() {
+        return valueOne != null;
+    }
+
+    public boolean getSecond() {
+        return valueTwo != null;
     }
 }

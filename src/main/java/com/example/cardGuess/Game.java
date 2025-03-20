@@ -9,7 +9,6 @@ import com.example.cardGuess.renderer.CardRenderer;
 import com.example.cardGuess.renderer.TextRenderer;
 
 import java.util.Arrays;
-import java.util.Locale;
 
 public class Game {
 
@@ -22,7 +21,6 @@ public class Game {
         this.deck = deck;
         this.cardRenderer = renderer;
     }
-
 
     public void startGame() {
         System.out.println("CARD GUESS GAME");
