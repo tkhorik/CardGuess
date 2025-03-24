@@ -55,13 +55,13 @@ public class Game {
                 System.out.println("Correct guess!");
                 System.out.println(card.getRankImage() + " " + card.getSuitImage());
                 betController.scoreCounter.add(askBetAmount);
-                System.out.println("Your bet is win! You balance is " + betController.scoreCounter.getScore());
+                System.out.println("Your bet is win!\uD83D\uDE0A✨ You balance is " + betController.scoreCounter.getScore());
                 System.out.println("Remaining cards: " + deck.remainingCards());
             } else {
                 System.out.println("Incorrect guess!");
                 System.out.println(card.getRankImage() + " " + card.getSuitImage());
                 betController.scoreCounter.sub(askBetAmount);
-                System.out.println("Your bet is win! You balance is " + betController.scoreCounter.getScore());
+                System.out.println("Your bet is loose!\uD83D\uDC99 You balance is " + betController.scoreCounter.getScore());
                 System.out.println("Remaining cards: " + deck.remainingCards());
             }
             textRenderer.render(card);
