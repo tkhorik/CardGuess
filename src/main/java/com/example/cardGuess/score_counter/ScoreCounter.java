@@ -26,17 +26,31 @@ public class ScoreCounter {
 
     public void add(int value) {
         score += value;
+//        if (score > maxScore) {
+//            score = maxScore;
+//        }
+    }
+
+    public void sub(int value) {
+        score -= value;
+//        if (score < minScore) {
+//            score = minScore;
+//        }
+    }
+    public void addWithLimit(int value) {
+        score += value;
         if (score > maxScore) {
             score = maxScore;
         }
     }
 
-    public void sub(int value) {
+    public void subWitLimit(int value) {
         score -= value;
         if (score < minScore) {
             score = minScore;
         }
     }
+
 
     public boolean isMin() {
         return score <= minScore;

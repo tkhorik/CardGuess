@@ -8,8 +8,8 @@ public abstract class AbstractDialog<T> implements Dialog<T> {
     protected final String title;
     protected final String errorMessage;
     protected final Function<String, T> mapper;
-    protected final Scanner scanner = new Scanner(System.in);
     protected final Predicate<T> validator;
+    protected final Scanner scanner = new Scanner(System.in);
 
     public AbstractDialog(String title, String errorMessage, Function<String, T> mapper, Predicate<T> validator) {
         this.title = title;
