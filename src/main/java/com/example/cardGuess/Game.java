@@ -23,22 +23,27 @@ public class Game {
     }
 
     public void startGame() {
-        System.out.println("CARD GUESS GAME");
         Deck deck = new Deck();
-        String[] keys = {KEY_BLACK, KEY_RED};
-        String title = String.format("\nУгадай карту черная %s - красная %s", keys[0], keys[1]);
-        String error = "Ошибка ввода! Необходимо ввести одно из значений: " + Arrays.toString(keys);
-        Dialog<String> dialog = new StringSelectDialog(title, error, keys);
-
+        deck.shuffle();
         BetController betController = new BetController();
+        CardRenderer textRenderer = new TextRenderer();
+
+        String[] keyCardColor = {KEY_BLACK, KEY_RED};
+        String error = "Ошибка ввода! Необходимо ввести одно из значений: " + Arrays.toString(keyCardColor);
+
+        System.out.println("========== GUESS THE CARD GAME ==========");
+        String title = String.format("\nУгадай карту черная %s - красная %s", keyCardColor[0], keyCardColor[1]);
+
+        Dialog<String> dialog = new StringSelectDialog(title, error, keyCardColor);
+
+
         int betmin = betController.scoreCounter.getMinScore();
         int betmax = betController.scoreCounter.getMaxScore();
-        //fixme: here i should make some dialogs separately now it works incorrectly
-        Dialog<Integer> betDialog = new IntegerDialog("ВВедите вашу ставку (целое число)", error, betmin, betmax);
-        deck.shuffle();
 
-        CardRenderer textRenderer = new TextRenderer();
+        Dialog<Integer> betDialog = new IntegerDialog("ВВедите вашу ставку (целое число)", error, betmin, betmax);
+
         textRenderer.render(deck.dealCard());
+
         while (deck.remainingCards() > 0) {
 
 //            betController.startBetting();

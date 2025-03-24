@@ -1,4 +1,4 @@
-package com.example.cardGuess.my_custom_arraylist;
+package com.example.cardGuess.java_exersises.my_custom_arraylist;
 
 public class ArrayUtils {
     public static <T> void swap(T[] array, int i, int j) {

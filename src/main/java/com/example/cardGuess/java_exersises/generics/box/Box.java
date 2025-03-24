@@ -1,4 +1,4 @@
-package com.example.cardGuess.my_custom_arraylist.box;
+package com.example.cardGuess.java_exersises.generics.box;
 
 public class Box<T> {
     private T value;
