@@ -2,6 +2,7 @@ package com.example.cardGuess.weapons.ammunition;
 
 //Ружье: 6-10, 3
 public class Shotgun extends AbstractWeapon {
+
     public Shotgun(int damageMin, int damageMax, int magazineCapacity) {
         super(damageMin, damageMax, magazineCapacity);
     }

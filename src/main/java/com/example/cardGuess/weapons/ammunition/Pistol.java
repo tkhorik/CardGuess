@@ -15,9 +15,4 @@ public class Pistol extends AbstractWeapon {
                 ", magazineCapacity=" + magazineCapacity +
                 '}';
     }
-
-    @Override
-    public int makeShot() {
-        return 0;
-    }
 }
