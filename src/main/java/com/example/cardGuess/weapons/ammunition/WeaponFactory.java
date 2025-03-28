@@ -2,7 +2,6 @@ package com.example.cardGuess.weapons.ammunition;
 
 public final class WeaponFactory {
     private WeaponFactory() {
-
     }
 //    Револьвер: 3-6, 7
 //    Пистолет: 5-8, 5

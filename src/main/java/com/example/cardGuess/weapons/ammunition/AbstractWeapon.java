@@ -2,7 +2,7 @@ package com.example.cardGuess.weapons.ammunition;
 
 import java.util.Random;
 
-public abstract class AbstractWeapon implements Weapon {
+public abstract class AbstractWeapon implements Weapon, Firearms{
     int damageMin;
     int damageMax;
     int magazineCapacity;

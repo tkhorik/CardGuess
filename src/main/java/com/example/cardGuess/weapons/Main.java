@@ -5,7 +5,6 @@ import com.example.cardGuess.weapons.ammunition.WeaponFactory;
 
 public class Main {
     public static void main(String[] args) {
-
         Weapon revolver = WeaponFactory.createWeapon("0");
         Weapon pistol = WeaponFactory.createWeapon("1");
         Weapon shotgun = WeaponFactory.createWeapon("2");
@@ -14,16 +13,15 @@ public class Main {
         System.out.println(pistol);
         System.out.println(shotgun);
 
-        for (int i = 0; i < 20; i++) {
-            System.out.println(revolver.makeShot() + " нанес урона revolver");
-            System.out.println(pistol.makeShot() + " нанес урона pistol");
-            System.out.println(shotgun.makeShot() + " нанес урона shotgun");
-        }
+        shootWeapon(revolver);
+        shootWeapon(pistol);
+        shootWeapon(shotgun);
     }
 
-//    private static void makeShot(int ammount, Weapon weapon) {
-//        for (int i = 0; i < ammount; i++) {
-//            weapon.makeShot();
-//        }
-//    }
+    private static void shootWeapon(Weapon weapon) {
+        for (int i = 0; i < weapon.getMagazineCapacity() + 1; i++) {
+            System.out.println(weapon.getClass().getSimpleName().toLowerCase() + " magazine capacity: " + weapon.getMagazineCapacity());
+            System.out.println(weapon.makeShot() + " damage dealt by " + weapon.getClass().getSimpleName().toLowerCase());
+        }
+    }
 }
