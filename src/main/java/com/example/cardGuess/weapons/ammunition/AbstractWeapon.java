@@ -30,7 +30,7 @@ public abstract class AbstractWeapon implements Weapon {
             System.out.println("Нет патронов!");
             throw new IllegalArgumentException("Нет патронов!");
         }
-        System.out.println("capacity value = " + magazineCapacity);
+        System.out.println("сейчас в магазине " + magazineCapacity + " патронов");
         magazineCapacity--;
         System.out.println("после выстрела осталось " + magazineCapacity);
         Random random = new Random();

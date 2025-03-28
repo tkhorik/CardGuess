@@ -15,9 +15,9 @@ public class Main {
         System.out.println(shotgun);
 
         for (int i = 0; i < 20; i++) {
-            System.out.println(revolver.makeShot() + " revolver");
-            System.out.println(pistol.makeShot() + " pistol");
-            System.out.println(shotgun.makeShot() + " shotgun");
+            System.out.println(revolver.makeShot() + " нанес урона revolver");
+            System.out.println(pistol.makeShot() + " нанес урона pistol");
+            System.out.println(shotgun.makeShot() + " нанес урона shotgun");
         }
     }
 
