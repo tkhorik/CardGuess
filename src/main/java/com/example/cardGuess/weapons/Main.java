@@ -3,6 +3,8 @@ package com.example.cardGuess.weapons;
 import com.example.cardGuess.weapons.ammunition.Weapon;
 import com.example.cardGuess.weapons.ammunition.WeaponFactory;
 
+//todo: на данный момент игра производит поочередно выстрелы из всех орудии нанося урон в диапазоне каждого из них
+// на этом этапе работа завершена так ак реализовано абстрактным классом
 public class Main {
     public static void main(String[] args) {
         Weapon revolver = WeaponFactory.createWeapon("0");
